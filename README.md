@@ -3,7 +3,6 @@ StravaKit
 
 Strava (www.strava.com) API wrapper for iOS and Mac written in Swift.
 
-<br>
 ## License
 ***
 
