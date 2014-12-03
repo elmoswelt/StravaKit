@@ -19,6 +19,8 @@
 		5212245D1A2F3D820019AEF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5212245C1A2F3D820019AEF7 /* ViewController.m */; };
 		5212245F1A2F3D820019AEF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5212245E1A2F3D820019AEF7 /* Images.xcassets */; };
 		521224621A2F3D820019AEF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521224601A2F3D820019AEF7 /* Main.storyboard */; };
+		52E630341A2F781A00E9F728 /* StravaKitiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E630131A2F751600E9F728 /* StravaKitiOS.framework */; };
+		52E630351A2F782800E9F728 /* StravaKitMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E62FF51A2F74EC00E9F728 /* StravaKitMac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +45,6 @@
 		5212245C1A2F3D820019AEF7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5212245E1A2F3D820019AEF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		521224611A2F3D820019AEF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5212246C1A2F3D820019AEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5212246D1A2F3D820019AEF7 /* StravaKitDemoMacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StravaKitDemoMacTests.m; sourceTree = "<group>"; };
 		52E62FF51A2F74EC00E9F728 /* StravaKitMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StravaKitMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E630131A2F751600E9F728 /* StravaKitiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StravaKitiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E6302D1A2F75B500E9F728 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E630341A2F781A00E9F728 /* StravaKitiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E630351A2F782800E9F728 /* StravaKitMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +125,6 @@
 		521224271A2F3D3D0019AEF7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5212246A1A2F3D820019AEF7 /* StravaKitDemoMacTests */,
 				521224281A2F3D3D0019AEF7 /* Info.plist */,
 				521224291A2F3D3D0019AEF7 /* main.m */,
 			);
@@ -149,24 +150,6 @@
 			children = (
 				521224551A2F3D820019AEF7 /* Info.plist */,
 				521224591A2F3D820019AEF7 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5212246A1A2F3D820019AEF7 /* StravaKitDemoMacTests */ = {
-			isa = PBXGroup;
-			children = (
-				5212246D1A2F3D820019AEF7 /* StravaKitDemoMacTests.m */,
-				5212246B1A2F3D820019AEF7 /* Supporting Files */,
-			);
-			name = StravaKitDemoMacTests;
-			path = ../StravaKitDemoMacTests;
-			sourceTree = "<group>";
-		};
-		5212246B1A2F3D820019AEF7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5212246C1A2F3D820019AEF7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
