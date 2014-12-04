@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
-
 #import <StravaKit/StravaKit-Swift.h>
 
 @interface AppDelegate ()
