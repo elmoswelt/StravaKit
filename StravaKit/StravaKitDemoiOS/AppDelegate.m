@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    StravaKitAPI *api = [[StravaKitAPI alloc] init];
+    StravaKitClient *api = [[StravaKitClient alloc] init];
     [api helloWorld];
 
     return YES;
