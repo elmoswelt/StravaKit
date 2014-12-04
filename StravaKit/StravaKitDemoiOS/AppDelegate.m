@@ -21,7 +21,6 @@
     // Override point for customization after application launch.
     
     StravaKitAPI *api = [[StravaKitAPI alloc] init];
-    
     [api helloWorld];
 
     return YES;

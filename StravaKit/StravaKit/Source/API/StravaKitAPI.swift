@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class StravaKitAPI : NSObject {
+@objc (MCStravaKitAPI) public class StravaKitAPI : NSObject {
     
     public func helloWorld() {
     
