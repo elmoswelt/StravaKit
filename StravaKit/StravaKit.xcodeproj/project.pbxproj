@@ -68,18 +68,10 @@
 		521224161A2F3B0D0019AEF7 = {
 			isa = PBXGroup;
 			children = (
-				5212241D1A2F3C3A0019AEF7 /* StravaKit */,
 				521224261A2F3D3D0019AEF7 /* StravaKitDemoiOS */,
 				521224531A2F3D820019AEF7 /* StravaKitDemoMac */,
 				521224201A2F3C890019AEF7 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		5212241D1A2F3C3A0019AEF7 /* StravaKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StravaKit;
 			sourceTree = "<group>";
 		};
 		521224201A2F3C890019AEF7 /* Products */ = {
@@ -505,6 +497,7 @@
 				5212244A1A2F3D3D0019AEF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5212246F1A2F3D820019AEF7 /* Build configuration list for PBXNativeTarget "StravaKitDemoMac" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +506,7 @@
 				521224711A2F3D820019AEF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
