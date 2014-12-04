@@ -18,7 +18,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
-    StravaKitAPI *api = [[StravaKitAPI alloc] init];
+    StravaKitClient *api = [[StravaKitClient alloc] init];
     
     [api helloWorld];
 }
