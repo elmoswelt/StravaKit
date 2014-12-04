@@ -1,7 +1,7 @@
 StravaKit
 =========
 
-Strava (www.strava.com) API wrapper for iOS and Mac written in Swift.
+StravaKit (www.strava.com) API wrapper for iOS and OSX written in Swift. The demo apps for iOS and OSX are written in Objective-C and are using StravaKit. StravaKit can be used in Swift or Objective-C applications. 
 
 ## License
 ***
