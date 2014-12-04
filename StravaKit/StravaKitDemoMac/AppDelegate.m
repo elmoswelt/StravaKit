@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <StravaKitOSX/StravaKitOSX-Swift.h>
 
 @interface AppDelegate ()
 
@@ -16,6 +17,10 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    
+    StravaKitAPI *api = [[StravaKitAPI alloc] init];
+    
+    [api helloWorld];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
