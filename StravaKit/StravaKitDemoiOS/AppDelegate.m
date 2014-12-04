@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 
+#import <StravaKit/StravaKit-Swift.h>
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    StravaKitAPI *api = [[StravaKitAPI alloc] init];
+    
+    [api helloWorld];
+
     return YES;
 }
 
