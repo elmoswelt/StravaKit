@@ -1,5 +1,5 @@
 //
-//  StravaKitClient.swift
+//  StravaClient.swift
 //  StravaKit
 //
 //  Created by Elmar Tampe on 04/12/14.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-@objc (MCStravaKitClient) public class StravaKitClient : NSObject {
+@objc (MCStravaClient) public class StravaClient : NSObject {
 
     
     // ------------------------------------------------------------------------------------------
     //MARK: - Singleton
     // ------------------------------------------------------------------------------------------
     
-    class var shared : StravaKitClient {
+    class var shared : StravaClient {
         
         struct Static {
-            static let instance : StravaKitClient = StravaKitClient()
+            static let instance : StravaClient = StravaClient()
         }
         
         return Static.instance
@@ -27,10 +27,17 @@ import Foundation
     // For Objective-C convenience - Use [StravaKitClient sharedInstance] as usual. use StravaClient.shared 
     // when using the framework in swift.
     
-    class public func sharedInstance() -> StravaKitClient {
+    class public func sharedInstance() -> StravaClient {
     
-        return StravaKitClient.shared
+        return StravaClient.shared
     }
+    
+    
+    // ------------------------------------------------------------------------------------------
+    //MARK: - Login
+    // ------------------------------------------------------------------------------------------
+    
+    
     
     
     // ------------------------------------------------------------------------------------------
