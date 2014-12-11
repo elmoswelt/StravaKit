@@ -39,8 +39,17 @@ import Foundation
     //MARK: - Login
     // ------------------------------------------------------------------------------------------
     public func login() -> Bool {
-    
-        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthlete())
+
+        // Test current athlete
+//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForCurrentAthlete())
+//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForCurrentAthleteFriends())
+        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForCurrentAthleteFollowers())
+
+
+        // Test other athletes -- Test ID
+//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthlete("227615"))
+//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthleteFriends("227615"))
+//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthleteFollowers("227615"))
         
         return true
     }

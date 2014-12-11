@@ -45,17 +45,28 @@ public class StravaNetworkEngine {
     // ------------------------------------------------------------------------------------------
     //MARK: - Send request
     // ------------------------------------------------------------------------------------------
-    func sendRequest(request: NSURLRequest) {
+    func sendRequest(request: NSURLRequest?) {
         
-        // TODO Wrap the response, data and error for convenient use
-        let task: NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
+        if let aRequest = request? {
             
-        let json = NSString(data: data, encoding: NSUTF8StringEncoding)
+            // TODO Wrap the response, data and error for convenient use
+            let task: NSURLSessionDataTask = session.dataTaskWithRequest(aRequest, completionHandler: {(data, response, error) in
+                
+                let json = NSString(data: data, encoding: NSUTF8StringEncoding)
+                
+                println("\n *********************************** \n")
+                println(json)
+                println("\n *********************************** \n")
+                
+            });
             
-            println(json)
-            
-        });
+            task.resume()
+        }
+        else {
         
-        task.resume()
+            println("Request Error. TODO: Add correct error handling.")
+        }
+        
+
     }
 }
