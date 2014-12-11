@@ -10,6 +10,8 @@ import Foundation
 
 @objc (MCStravaClient) public class StravaClient : NSObject {
 
+    // Shared Network Engine
+    let networkEngine = StravaNetworkEngine.shared
     
     // ------------------------------------------------------------------------------------------
     //MARK: - Singleton
@@ -20,11 +22,11 @@ import Foundation
         struct Static {
             static let instance : StravaClient = StravaClient()
         }
-        
+                
         return Static.instance
     }
     
-    // For Objective-C convenience - Use [StravaKitClient sharedInstance] as usual. use StravaClient.shared 
+    // For Objective-C convenience - Use '[StravaKitClient sharedInstance]' as usual. Use 'StravaClient.shared'
     // when using the framework in swift.
     
     class public func sharedInstance() -> StravaClient {
@@ -36,8 +38,12 @@ import Foundation
     // ------------------------------------------------------------------------------------------
     //MARK: - Login
     // ------------------------------------------------------------------------------------------
+    public func login() -> Bool {
     
-    
+        networkEngine.sendRequest(StravaRequest().URLRequestForAthlete())
+        
+        return true
+    }
     
     
     // ------------------------------------------------------------------------------------------
