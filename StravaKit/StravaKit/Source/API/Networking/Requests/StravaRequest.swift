@@ -32,14 +32,18 @@ class StravaRequest {
         
             let urlString = baseURL + ressource
             let url = NSURL(string: urlString)
-            let request = NSMutableURLRequest(URL: url!)
             
-            if let HTTPMethod =  requestMethod?.rawValue {
+            if let aURL = url? {
                 
-                request.HTTPMethod = HTTPMethod
+                let request = NSMutableURLRequest(URL: aURL)
+                
+                if let HTTPMethod =  requestMethod?.rawValue {
+                    
+                    request.HTTPMethod = HTTPMethod
+                    
+                    return request
+                }
             }
-            
-            return request
         }
         
         return nil
