@@ -11,7 +11,7 @@ import Foundation
 @objc (MCStravaClient) public class StravaClient : NSObject {
 
     // Shared Network Engine
-    let networkEngine = StravaNetworkEngine.shared
+    let sharedNetworkEngine = StravaNetworkEngine.shared
     
     // ------------------------------------------------------------------------------------------
     //MARK: - Singleton
@@ -40,7 +40,7 @@ import Foundation
     // ------------------------------------------------------------------------------------------
     public func login() -> Bool {
     
-        networkEngine.sendRequest(StravaRequest().URLRequestForAthlete())
+        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthlete())
         
         return true
     }
