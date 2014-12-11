@@ -10,7 +10,7 @@ import Foundation
 
 private let resource = "athlete"
 
-public extension StravaRequest {
+extension StravaRequest {
 
     // ------------------------------------------------------------------------------------------
     //MARK: - Athlete URLRequest

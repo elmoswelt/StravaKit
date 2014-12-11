@@ -21,13 +21,12 @@ enum HTTPMethod : NSString {
 
 // ----------------------------------------------------------------------------------------------
 
-
-@objc (MCStravaRequest) public class StravaRequest : NSObject {
+class StravaRequest {
 
     // ------------------------------------------------------------------------------------------
     //MARK: - URL Request
     // ------------------------------------------------------------------------------------------
-    func URLRequestForResource(ressource: NSString!, requestMethod: HTTPMethod!) -> NSURLRequest? {
+    func URLRequestForResource(ressource: String!, requestMethod: HTTPMethod!) -> NSURLRequest? {
         
         if let ressource = ressource? {
         
