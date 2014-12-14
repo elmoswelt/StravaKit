@@ -66,7 +66,5 @@ public class StravaNetworkEngine {
         
             println("Request Error. TODO: Add correct error handling.")
         }
-        
-
     }
 }
