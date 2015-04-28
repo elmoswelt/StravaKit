@@ -445,7 +445,7 @@
 		521224171A2F3B0D0019AEF7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				TargetAttributes = {
 					520DBAFC1A30BEE800AA1A14 = {
 						CreatedOnToolsVersion = 6.1;
@@ -832,6 +832,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};

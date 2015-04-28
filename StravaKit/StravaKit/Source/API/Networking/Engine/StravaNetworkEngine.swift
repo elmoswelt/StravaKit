@@ -15,10 +15,10 @@ public class StravaNetworkEngine {
     // ------------------------------------------------------------------------------------------
     //MARK: - Singleton
     // ------------------------------------------------------------------------------------------
-    
     class var shared: StravaNetworkEngine {
         
         struct Static {
+            
             static let instance : StravaNetworkEngine = StravaNetworkEngine()
         }
         
@@ -47,7 +47,7 @@ public class StravaNetworkEngine {
     // ------------------------------------------------------------------------------------------
     func sendRequest(request: NSURLRequest?) {
         
-        if let aRequest = request? {
+        if let aRequest = request {
             
             // TODO Wrap the response, data and error for convenient use
             let task: NSURLSessionDataTask = session.dataTaskWithRequest(aRequest, completionHandler: {(data, response, error) in

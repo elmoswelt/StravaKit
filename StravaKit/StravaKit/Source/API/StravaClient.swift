@@ -8,8 +8,10 @@
 
 import Foundation
 
+
 @objc (MCStravaClient) public class StravaClient : NSObject {
 
+    
     // Shared Network Engine
     let sharedNetworkEngine = StravaNetworkEngine.shared
     
@@ -20,6 +22,7 @@ import Foundation
     class var shared : StravaClient {
         
         struct Static {
+            
             static let instance : StravaClient = StravaClient()
         }
                 
