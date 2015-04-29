@@ -50,20 +50,29 @@ public class StravaNetworkEngine {
         if let aRequest = request {
             
             // TODO Wrap the response, data and error for convenient use
-            let task: NSURLSessionDataTask = session.dataTaskWithRequest(aRequest, completionHandler: {(data, response, error) in
+            let task: NSURLSessionDataTask =
+                session.dataTaskWithRequest(aRequest, completionHandler: {(data, response, error) in
                 
-                let json = NSString(data: data, encoding: NSUTF8StringEncoding)
-                
-                println("\n *********************************** \n")
-                println(json)
-                println("\n *********************************** \n")
-                
+                    var parseError: NSError?
+                    
+                    if let jsonObject: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:&parseError) {
+                        
+                        if let jsonArray = jsonObject as? NSArray {
+                            
+                            println(jsonArray)
+                        } else {
+                            
+                            println("Parsing Error")
+                        }
+                    } else {
+                        
+                        println("Could not parse JSON: \(error!)")
+                    }
             });
             
             task.resume()
         }
         else {
-        
             println("Request Error. TODO: Add correct error handling.")
         }
     }

@@ -11,7 +11,6 @@ import Foundation
 
 @objc (MCStravaClient) public class StravaClient : NSObject {
 
-    
     // Shared Network Engine
     let sharedNetworkEngine = StravaNetworkEngine.shared
     
@@ -42,18 +41,13 @@ import Foundation
     //MARK: - Login
     // ------------------------------------------------------------------------------------------
     public func login() -> Bool {
-
-        // Test current athlete
-//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForCurrentAthlete())
-//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForCurrentAthleteFriends())
+        
         sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForCurrentAthleteFollowers())
-
 
         // Test other athletes -- Test ID
 //        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthlete("227615"))
 //        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthleteFriends("227615"))
 //        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthleteFollowers("227615"))
-        
         return true
     }
     
@@ -64,6 +58,13 @@ import Foundation
     public func helloWorld() {
     
         println("Strava rockz!")
-        
+    }
+    
+    // ------------------------------------------------------------------------------------------
+    //MARK: - Fetch User
+    // ------------------------------------------------------------------------------------------
+    public func fetchMyFollower() -> NSArray {
+    
+        return []
     }
 }
