@@ -29,7 +29,7 @@ public class StravaNetworkEngine {
     // ------------------------------------------------------------------------------------------
     //MARK: - Setup NSURLSession
     // ------------------------------------------------------------------------------------------
-    let session: NSURLSession!
+    let urlSession: NSURLSession!
     
     private init() {
     
@@ -38,20 +38,48 @@ public class StravaNetworkEngine {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfiguration.HTTPAdditionalHeaders = ["Authorization" : token]
         
-        session = NSURLSession(configuration: sessionConfiguration)
+        urlSession = NSURLSession(configuration: sessionConfiguration)
     }
     
     
     // ------------------------------------------------------------------------------------------
-    //MARK: - Send request
+    //MARK: - Enqueue network request
     // ------------------------------------------------------------------------------------------
+    func enqueueRequest(request: NSURLRequest?, successBlock: (NSData) -> (Void), failureBlock: () -> (Void)) {
+
+        if let jsonRequest = request {
+            
+            let task: NSURLSessionDataTask =
+                urlSession.dataTaskWithRequest(jsonRequest, completionHandler: {(data, response, error) in
+                    
+                    if let networkError = error {
+                    
+                        failureBlock()
+                    }
+                    
+                    else {
+                    
+                        successBlock(data)
+                    }
+            });
+            
+            task.resume()
+        }
+            
+        else {
+            
+            println("Request error, you should set a valid NSURLRequest object.")
+        }
+    }
+    
+    
     func sendRequest(request: NSURLRequest?) {
         
         if let aRequest = request {
             
             // TODO Wrap the response, data and error for convenient use
             let task: NSURLSessionDataTask =
-                session.dataTaskWithRequest(aRequest, completionHandler: {(data, response, error) in
+                urlSession.dataTaskWithRequest(aRequest, completionHandler: {(data, response, error) in
                 
                     var parseError: NSError?
                     
