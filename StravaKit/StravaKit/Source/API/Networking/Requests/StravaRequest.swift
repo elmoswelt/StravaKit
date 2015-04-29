@@ -21,25 +21,27 @@ enum HTTPMethod : NSString {
 
 // ----------------------------------------------------------------------------------------------
 
+
 class StravaRequest {
 
+    
     // ------------------------------------------------------------------------------------------
     //MARK: - URL Request
     // ------------------------------------------------------------------------------------------
     func URLRequestForResource(ressource: String!, requestMethod: HTTPMethod!) -> NSURLRequest? {
         
-        if let ressource = ressource? {
+        if let ressource = ressource {
         
             let urlString = baseURL + ressource
             let url = NSURL(string: urlString)
             
-            if let aURL = url? {
+            if let aURL = url {
                 
                 let request = NSMutableURLRequest(URL: aURL)
                 
-                if let HTTPMethod =  requestMethod?.rawValue {
+                if let HTTPMethod = requestMethod?.rawValue {
                     
-                    request.HTTPMethod = HTTPMethod
+                    request.HTTPMethod = HTTPMethod as String
                     
                     return request
                 }
