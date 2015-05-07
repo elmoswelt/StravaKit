@@ -42,29 +42,34 @@ import Foundation
     // ------------------------------------------------------------------------------------------
     public func login() -> Bool {
         
-        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForCurrentAthleteFollowers())
-
-        // Test other athletes -- Test ID
-//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthlete("227615"))
-//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthleteFriends("227615"))
-//        sharedNetworkEngine.sendRequest(StravaRequest().URLRequestForAthleteFollowers("227615"))
+        println("Login should be done here.")
         return true
     }
     
     
     // ------------------------------------------------------------------------------------------
-    //MARK: - Test
+    //MARK: - Fetch User/Athletes
     // ------------------------------------------------------------------------------------------
-    public func helloWorld() {
+    public func fetchMe() -> StravaAthlete? {
     
-        println("Strava rockz!")
-    }
-    
-    // ------------------------------------------------------------------------------------------
-    //MARK: - Fetch User
-    // ------------------------------------------------------------------------------------------
-    public func fetchMyFollower() -> NSArray {
-    
-        return []
+        println("Fetch Me as an athlete.")
+        
+        let request = StravaRequest().URLRequestForCurrentAthlete()
+        
+        sharedNetworkEngine.enqueueRequest(request,
+            successBlock: { (jsonData: AnyObject) -> Void in
+            
+                if let jsonDict = jsonData as? NSDictionary {
+                
+                    println(jsonDict)
+                    
+                }
+            },
+            failureBlock: { (error: NSError?) -> Void in
+                
+                println("Error fetching Me as an athlete.")
+        });
+        
+        return nil;
     }
 }

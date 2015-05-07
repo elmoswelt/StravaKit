@@ -45,63 +45,43 @@ public class StravaNetworkEngine {
     // ------------------------------------------------------------------------------------------
     //MARK: - Enqueue network request
     // ------------------------------------------------------------------------------------------
-    func enqueueRequest(request: NSURLRequest?, successBlock: (NSData) -> (Void), failureBlock: () -> (Void)) {
+    func enqueueRequest(request: NSURLRequest?, successBlock: AnyObject -> Void, failureBlock: NSError? -> Void ) {
 
         if let jsonRequest = request {
             
-            let task: NSURLSessionDataTask =
+            let dataTask: NSURLSessionDataTask =
                 urlSession.dataTaskWithRequest(jsonRequest, completionHandler: {(data, response, error) in
                     
                     if let networkError = error {
                     
-                        failureBlock()
+                        println("Error. Request error occured: \(error)")
+                        
+                        failureBlock(nil)
                     }
                     
                     else {
-                    
-                        successBlock(data)
+                        
+                        var parsingError: NSError?
+                        
+                        if let jsonObject: AnyObject =
+                                NSJSONSerialization.JSONObjectWithData(data, options: nil, error:&parsingError) {
+
+                                    successBlock(jsonObject)
+                        }
+                        else {
+                        
+                            failureBlock(nil)
+                            println("Error. JSON parsing failed with error: \(parsingError)")
+                        }
                     }
             });
             
-            task.resume()
+            dataTask.resume()
         }
             
         else {
             
             println("Request error, you should set a valid NSURLRequest object.")
-        }
-    }
-    
-    
-    func sendRequest(request: NSURLRequest?) {
-        
-        if let aRequest = request {
-            
-            // TODO Wrap the response, data and error for convenient use
-            let task: NSURLSessionDataTask =
-                urlSession.dataTaskWithRequest(aRequest, completionHandler: {(data, response, error) in
-                
-                    var parseError: NSError?
-                    
-                    if let jsonObject: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:&parseError) {
-                        
-                        if let jsonArray = jsonObject as? NSArray {
-                            
-                            println(jsonArray)
-                        } else {
-                            
-                            println("Parsing Error")
-                        }
-                    } else {
-                        
-                        println("Could not parse JSON: \(error!)")
-                    }
-            });
-            
-            task.resume()
-        }
-        else {
-            println("Request Error. TODO: Add correct error handling.")
         }
     }
 }
