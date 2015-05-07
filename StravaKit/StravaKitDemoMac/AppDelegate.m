@@ -18,7 +18,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
-   [[StravaClient sharedInstance] login];
+    [[StravaClient sharedInstance] login];
+    [[StravaClient sharedInstance] fetchMe];
     
 }
 
