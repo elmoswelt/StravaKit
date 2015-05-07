@@ -38,7 +38,7 @@
 
     [[StravaClient sharedInstance] login];
     
-    [[StravaClient sharedInstance] fetchMe:^(StravaAthlete *athlete) {
+    [[StravaClient sharedInstance] fetchCurrentAthlete:^(StravaAthlete *athlete) {
         
         NSLog(@"Fetching ME. Athlete: %@", athlete);
     }];

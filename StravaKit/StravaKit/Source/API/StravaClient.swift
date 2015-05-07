@@ -50,7 +50,7 @@ import Foundation
     // ------------------------------------------------------------------------------------------
     //MARK: - Fetch User/Athletes
     // ------------------------------------------------------------------------------------------
-    public func fetchMe(successBlock:StravaAthlete -> Void) {
+    public func fetchCurrentAthlete(successBlock: StravaAthlete -> Void) {
     
         println("Fetch Me as an athlete.")
         
