@@ -50,7 +50,7 @@ import Foundation
     // ------------------------------------------------------------------------------------------
     //MARK: - Fetch User/Athletes
     // ------------------------------------------------------------------------------------------
-    public func fetchMe() -> StravaAthlete? {
+    public func fetchCurrentAthlete(successBlock: StravaAthlete -> Void) {
     
         println("Fetch Me as an athlete.")
         
@@ -61,15 +61,15 @@ import Foundation
             
                 if let jsonDict = jsonData as? NSDictionary {
                 
-                    println(jsonDict)
+                    if let athlete = StravaAthlete.stravaAthleteWithJSONDict(jsonDict) {
                     
+                        successBlock(athlete)
+                    }
                 }
             },
             failureBlock: { (error: NSError?) -> Void in
                 
                 println("Error fetching Me as an athlete.")
         });
-        
-        return nil;
     }
 }

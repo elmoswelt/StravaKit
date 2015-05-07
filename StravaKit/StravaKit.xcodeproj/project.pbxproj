@@ -22,13 +22,13 @@
 		521224361A2F3D3D0019AEF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521224341A2F3D3D0019AEF7 /* Main.storyboard */; };
 		521224381A2F3D3D0019AEF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521224371A2F3D3D0019AEF7 /* Images.xcassets */; };
 		5212243B1A2F3D3D0019AEF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521224391A2F3D3D0019AEF7 /* LaunchScreen.xib */; };
-		521224581A2F3D820019AEF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 521224571A2F3D820019AEF7 /* AppDelegate.m */; };
 		5212245A1A2F3D820019AEF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 521224591A2F3D820019AEF7 /* main.m */; };
 		5212245D1A2F3D820019AEF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5212245C1A2F3D820019AEF7 /* ViewController.m */; };
 		5212245F1A2F3D820019AEF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5212245E1A2F3D820019AEF7 /* Images.xcassets */; };
 		521224621A2F3D820019AEF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521224601A2F3D820019AEF7 /* Main.storyboard */; };
 		522CCE4A1A321A1E00392694 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CCE491A321A1E00392694 /* ApplicationConstants.swift */; };
 		522CCE4B1A321A1E00392694 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CCE491A321A1E00392694 /* ApplicationConstants.swift */; };
+		528EC9F31AFB958400A88C3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 528EC9F21AFB958400A88C3A /* AppDelegate.m */; };
 		52CD183A1A389F1800888898 /* StravaActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD18331A389F1800888898 /* StravaActivity.swift */; };
 		52CD183B1A389F1800888898 /* StravaActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD18331A389F1800888898 /* StravaActivity.swift */; };
 		52CD183C1A389F1800888898 /* StravaAthlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD18341A389F1800888898 /* StravaAthlete.swift */; };
@@ -114,7 +114,6 @@
 		521224521A2F3D820019AEF7 /* StravaKitDemoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaKitDemoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521224551A2F3D820019AEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521224561A2F3D820019AEF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		521224571A2F3D820019AEF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		521224591A2F3D820019AEF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5212245B1A2F3D820019AEF7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5212245C1A2F3D820019AEF7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		5212246C1A2F3D820019AEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5212246D1A2F3D820019AEF7 /* StravaKitDemoMacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StravaKitDemoMacTests.m; sourceTree = "<group>"; };
 		522CCE491A321A1E00392694 /* ApplicationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
+		528EC9F21AFB958400A88C3A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		52CD18331A389F1800888898 /* StravaActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaActivity.swift; sourceTree = "<group>"; };
 		52CD18341A389F1800888898 /* StravaAthlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaAthlete.swift; sourceTree = "<group>"; };
 		52CD18351A389F1800888898 /* StravaClub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaClub.swift; sourceTree = "<group>"; };
@@ -258,12 +258,12 @@
 			isa = PBXGroup;
 			children = (
 				521224561A2F3D820019AEF7 /* AppDelegate.h */,
-				521224571A2F3D820019AEF7 /* AppDelegate.m */,
-				5212245B1A2F3D820019AEF7 /* ViewController.h */,
-				5212245C1A2F3D820019AEF7 /* ViewController.m */,
+				528EC9F21AFB958400A88C3A /* AppDelegate.m */,
 				5212245E1A2F3D820019AEF7 /* Images.xcassets */,
 				521224601A2F3D820019AEF7 /* Main.storyboard */,
 				521224541A2F3D820019AEF7 /* Supporting Files */,
+				5212245B1A2F3D820019AEF7 /* ViewController.h */,
+				5212245C1A2F3D820019AEF7 /* ViewController.m */,
 			);
 			path = StravaKitDemoMac;
 			sourceTree = "<group>";
@@ -573,7 +573,7 @@
 			files = (
 				5212245D1A2F3D820019AEF7 /* ViewController.m in Sources */,
 				5212245A1A2F3D820019AEF7 /* main.m in Sources */,
-				521224581A2F3D820019AEF7 /* AppDelegate.m in Sources */,
+				528EC9F31AFB958400A88C3A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
